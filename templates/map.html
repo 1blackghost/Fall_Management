@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Local Schools</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXK3oBel2pI9xrWVr3oWuyNgTFgSxEdfk&callback=initMap"
+    type="text/javascript"></script>
+    <script type="text/javascript">
+    function initMap() {
+        new google.maps.Map(document.getElementById('map'), {
+            center: {lat: {{lat}}, lng: {{lng}}},
+            zoom: 16
+          });
+    }
+    </script>
+</head>
+<body>
+    <a href="/logout">Logout</a>
+<body>
+    <p style="font-size: 40px;">Logged in as {{username}} Ambulance Driver</p>
+    <p>
+        General Instructions:<br>
+        1.Stay on page and turn on GPS location and location access.<br>
+        2.You will be notified in case of accidents<br>
+        3.After Notification press the button to view the location.<br>
+    </p>
+    <form action="#" method="post">
+        <input style="color: white;background-color: blue;" type="submit" value="View Location">
+    </form>
+</body>
+<div class="container">
+    <h1>{{name}} </h1>
+    <div id="map" style="width:100%; height:500px;"></div>
+</div>
+</body>
+</html>

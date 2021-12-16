@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<script>
+			var x = document.getElementById("demo");
+			function getLocation() {
+
+			  if (navigator.geolocation) {
+			    navigator.geolocation.watchPosition(showPosition);
+			  } else {
+			    x.innerHTML = "Geolocation is not supported by this browser.";
+			  }
+			}
+			
+			function showPosition(position) {
+				var latitude = position.coords.latitude
+				var longitude = position.coords.longitude
+				var link = "https://www.google.com/maps/@"+latitude+","+longitude
+			  document.getElementById("demo").value ="Your Google Map Location :"+link+" :"+"Latitude:"+latitude+":Longitude:"+longitude+":Accuracy: "+position.coords.accuracy+" m";
+
+			}
+			getLocation();
+
+
+		</script>
+	</head>
+	<body>
+		<label style="color: greenyellow;font-size: 50px;" >FALL DETECTION AND MANAGEMENT</label>
+		<br>
+		<a href="/signup">Signup </a>
+		<a href="/"> Home</a>
+		<br>
+		<br>
+		<label style="font-family: cursive;font-size: 30px;">Log In As:</label>
+		
+		<br>
+		<input onclick="location.href='/login';" style="background-color: blanchedalmond;color: green;border-width: 2px;border-style: ridge;border-color: blue;border-radius: 15px;" type="button" value="Ambulance Driver">
+		<br>
+		<br>
+		<input onclick="location.href='/login';" style="background-color: blanchedalmond;color: green;border-width: 2px;border-style: ridge;border-color: blue;border-radius: 15px;" type="button" value="User">
+	</body>
+
+</html>

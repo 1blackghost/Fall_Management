@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<script>
+			var x = document.getElementById("demo");
+			function getLocation() {
+
+			  if (navigator.geolocation) {
+			    navigator.geolocation.watchPosition(showPosition);
+			  } else {
+			    x.innerHTML = "Geolocation is not supported by this browser.";
+			  }
+			}
+			
+			function showPosition(position) {
+				var latitude = position.coords.latitude
+				var longitude = position.coords.longitude
+				var link = "https://www.google.com/maps/@"+latitude+","+longitude
+			  document.getElementById("demo").value ="Your Google Map Location :"+link+" :"+"Latitude:"+latitude+":Longitude:"+longitude+":Accuracy: "+position.coords.accuracy+" m";
+
+			}
+			getLocation();
+
+
+		</script>
+	</head>
+	<body>
+		<a href="/login">Login </a>
+		<a href="/"> Home</a>
+		<form action="#" method="post">
+
+			<label style="color: powderblue;font-size: 50px;" >Sign Up</label><p style="color:red">{{error}}</p>
+			<br>
+			<label>Name: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
+			<input name="name">
+			<br>
+			<label>Email: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
+			<input name="email">
+			<br>
+			<label>Password: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
+			<input name="password">
+			<br>
+			<label>Confirm-Password:  </label>
+			<input name="conf">
+			<br>
+			<br>
+			<label>You Are Signing As:</label>
+			<input type="radio" name="options" id="driver" value="Ambulance Driver">Ambulance Driver</input>  
+			<input type="radio" name="options" id="user" value="User">User</input>  
+			<input type="hidden" id="demo" name="demo"></p>
+			<br>
+			<br>
+			<input type="submit" value="Sign Up">
+		</form>
+	</body>
+
+</html>

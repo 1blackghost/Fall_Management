@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<script>
+			var x = document.getElementById("demo");
+			function getLocation() {
+
+			  if (navigator.geolocation) {
+			    navigator.geolocation.watchPosition(showPosition);
+			  } else {
+			    x.innerHTML = "Geolocation is not supported by this browser.";
+			  }
+			}
+			
+			function showPosition(position) {
+				var latitude = position.coords.latitude
+				var longitude = position.coords.longitude
+				var link = "https://www.google.com/maps/@"+latitude+","+longitude
+			  document.getElementById("demo").value ="Your Google Map Location :"+link+" :"+"Latitude:"+latitude+":Longitude:"+longitude+":Accuracy: "+position.coords.accuracy+" m";
+
+			}
+			getLocation();
+
+
+		</script>
+	</head>
+	<body>
+		<a href="/signup">Signup </a>
+		<a href="/"> Home</a>
+		<form action="#" method="post">
+
+			<label style="color: powderblue;font-size: 50px;" >Log In</label><p style="color:red">{{error}}</p>
+			<br>
+			<label>Username or Email:  </label>
+			<input name="name">
+			<br>
+			<label>Password: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
+			<input name="password">
+			<input type="hidden" id="demo" name="demo"></p>
+			<br>
+			<br>
+			<input type="submit" value="Log In">
+		</form>
+	</body>
+
+</html>
