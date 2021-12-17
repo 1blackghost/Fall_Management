@@ -1,6 +1,6 @@
 # Fall_Management
 This is site for collecting data for managing fall detection and management
-#How to install
+# How to install
 `git clone https://github.com/1blackghost/Fall_Management.git`
 Clones the directory and files.
 `cd Fall_Management`
